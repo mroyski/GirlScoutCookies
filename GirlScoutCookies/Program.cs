@@ -6,7 +6,7 @@ namespace GirlScoutCookies
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Girl Scout Cookies");
         }
     }
 }
