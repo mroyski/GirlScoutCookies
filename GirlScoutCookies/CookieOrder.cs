@@ -6,13 +6,13 @@ namespace GirlScoutCookies
 {
     public class CookieOrder
     {
-        public string Variety;
-        public int NumBoxes;
+        public string Variety { get; set; }
+        public int NumBoxes { get; set; }
 
         public CookieOrder(string variety, int numBoxes)
         {
-            string Variety = variety;
-            int NumBoxes = numBoxes;
+            Variety = variety;
+            NumBoxes = numBoxes;
         }
     }
 }

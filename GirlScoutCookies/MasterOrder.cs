@@ -6,22 +6,55 @@ namespace GirlScoutCookies
 {
     public class MasterOrder
     {
-        public List<string> variety = new List<string>() { "Smores", "Thin Mints", "Samoas", "Tagalongs", "Trefoils", "Do-si-dos", "Lemonades"};
-        public List<CookieOrder> orders {get; set;}
+        List<CookieOrder> orders = new List<CookieOrder>();
 
         public MasterOrder()
         {
-            //orders = new List<CookieOrder>();
+
         }
 
         public void AddOrder(CookieOrder theOrder)
         {
-           orders.Add(theOrder);
+            orders.Add(theOrder);
         }
 
         public int GetTotalBoxes()
         {
-            foreach()
+            int numberofboxes = 0;
+
+            for (int i = 0; i < orders.Count; i++)
+            {
+                numberofboxes += orders[i].NumBoxes;
+            }
+            return numberofboxes;
+        }
+
+        public void RemoveVariety(string variety)
+        {
+                    orders.RemoveAll(x => x.Variety == variety);
+        }
+
+        public int GetVarietyBoxes(string variety)
+        {
+            int returnvalue = 0;
+            for (int i = 0; i < orders.Count; i++)
+            {
+                if (orders[i].Variety.Equals(variety))
+                {
+                    returnvalue += orders[i].NumBoxes;
+                }
+            }
+            return returnvalue;
+        }
+
+        public void ShowOrder()
+        {
+            for (int i = 0; i < orders.Count; i++)
+            {
+                Console.WriteLine("Variety : {0}\nBoxes : {1}",
+                    orders[i].Variety,
+                    orders[i].NumBoxes);
+            }
         }
     }
 }
