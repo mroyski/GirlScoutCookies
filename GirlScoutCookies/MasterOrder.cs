@@ -6,7 +6,7 @@ namespace GirlScoutCookies
 {
     public class MasterOrder
     {
-        List<CookieOrder> orders = new List<CookieOrder>();
+      public  List<CookieOrder> orders = new List<CookieOrder>();
 
         public MasterOrder()
         {
